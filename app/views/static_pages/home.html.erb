@@ -1,0 +1,26 @@
+<div id="wrapper">
+
+  <!-- FORM INPUT -->
+	<%= form_for(@user) do |f| %>
+		<div class="form-group form-group-lg">
+	    <%= f.text_field :email, placeholder: "enter email", class: "form-control input-lg", id: "formGroupInputLarge" %>
+	  </div>
+
+    <!-- BUTTON -->
+	  <div class="form-group form-group-lg">
+	    <%= f.submit "Submit", class: "btn btn-lg btn-default" %>
+	  </div>
+
+	<% end %>
+
+  <!-- VALIDATION MESSAGE -->
+	<div class="validation">
+    <span class="success_message">
+      <% flash.each do |key, value| %>
+	      <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+	    <% end %>
+    </span>
+    <%= render 'shared/error_messages' %>
+  </div>
+
+</div>

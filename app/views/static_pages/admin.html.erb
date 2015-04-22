@@ -1,0 +1,31 @@
+<div class="site-wrapper">
+
+  <div class="site-wrapper-inner">
+
+    <div class="cover-container">
+
+      <div class="inner cover">
+        <h1 class="cover-heading">
+          <%= pluralize(User.all.count, 'Email') %>
+        </h1>
+
+      </div>
+      <div class="email_list">
+        <% if @users.any? %>
+
+          <table class="table">
+            <%= render @users %>
+          </table>
+          <%#= will_paginate @videos %>
+        <% else %>
+          <p>No Signups</p>
+
+        <% end %>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
